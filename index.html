@@ -42,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -75,12 +75,23 @@
     }
 
     function getEnvironment() {
+      document.getElementById("os").append(liff.getOS())
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("version").append(liff.getVersoin()) // sdk liff
+      document.getElementById("acessToken").append(liff.getAccessToken()) // Token ชั่วคราวใช้ในการตรวจสอบความถูกต้อง
+      document.getElementById("isInClient").append(liff.isInClient()) // ตรวจสอบว่าใช้บนอุปกรณ์ไลน์ไหม รีเทิร์น Boolean จะได้แสดงผลแอปได้อย่างถูกต้อง
+      if (liff.isInClient()){
+        document.getElementById("btnLogOut").style.display = "none"
+      } else {
+        document.getElementById("btnMsg").style.display = "none"
+        document.getElementById("btnScanCode").style.display = "none"
+        document.getElementById("btnClose").style.display = "none"
+      }
     }
 
     async function main() {
-      alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
-      // getEnvironment()
+      await liff.init({ liffId: "1661511983-QrdJEw44" })
+      getEnvironment()
       // getUserProfile()
       // getContext()
       // getFriendship()
