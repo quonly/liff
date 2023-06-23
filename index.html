@@ -77,8 +77,8 @@
     function getEnvironment() {
       document.getElementById("os").append(liff.getOS())
       document.getElementById("language").append(liff.getLanguage())
-      document.getElementById("version").append(liff.getVersoin()) // sdk liff
-      document.getElementById("acessToken").append(liff.getAccessToken()) // Token ชั่วคราวใช้ในการตรวจสอบความถูกต้อง
+      document.getElementById("version").append(liff.getVersion()) // sdk liff
+      document.getElementById("acessToken").append(liff.getAccessToken()) // Token ชั่วคราวใช้ในการตรวจสอบความถูกต้อง verify ระบบหลังบ้านได้ด้วย
       document.getElementById("isInClient").append(liff.isInClient()) // ตรวจสอบว่าใช้บนอุปกรณ์ไลน์ไหม รีเทิร์น Boolean จะได้แสดงผลแอปได้อย่างถูกต้อง
       if (liff.isInClient()){
         document.getElementById("btnLogOut").style.display = "none"
